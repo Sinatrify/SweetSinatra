@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'aint_she_sweet'
+AintSheSweet.run

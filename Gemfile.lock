@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    aint_she_sweet (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aint_she_sweet!
+  bundler (~> 1.6)
+  rake

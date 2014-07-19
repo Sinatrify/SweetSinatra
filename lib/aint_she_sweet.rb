@@ -3,8 +3,6 @@ require "aint_she_sweet/version"
 module AintSheSweet
   APPNAME = ARGV.pop
   COMMAND = ARGV.join(" ")
-
-
   def self.run
     if COMMAND == "sweet sinatra"
       setup
@@ -14,4 +12,5 @@ module AintSheSweet
   def self.setup
     `git clone https://github.com/Sinatrify/Sinatra_Skeleton.git && rm -rf .git && mv Sinatra_Skeleton #{APPNAME}`
   end
+
 end

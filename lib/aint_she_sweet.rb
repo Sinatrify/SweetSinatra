@@ -10,6 +10,10 @@ module AintSheSweet
   end
 
   def self.setup
-    `git clone https://github.com/Sinatrify/Sinatra_Skeleton.git && rm -rf .git && mv Sinatra_Skeleton #{APPNAME}`
+    `git clone https://github.com/Sinatrify/Sinatra_Skeleton.git`
+    `rm -rf .git`
+    `mv Sinatra_Skeleton #{APPNAME}`
+    `cd #{APPNAME}`
+    `git init`
   end
 end

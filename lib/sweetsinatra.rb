@@ -1,10 +1,11 @@
-require "aint_she_sweet/version"
+require "sweetsinatra/version"
 
-module AintSheSweet
+module SweetSinatra
+  #sweet sinatra appname
   APPNAME = ARGV.pop
-  COMMAND = ARGV.join(" ")
+  COMMAND = ARGV.pop
   def self.run
-    if COMMAND == "sweet sinatra"
+    if COMMAND == "sinatra"
       setup
     end
   end

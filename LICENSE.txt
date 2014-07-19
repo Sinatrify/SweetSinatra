@@ -1,4 +1,4 @@
-Copyright (c) 2014 Puru Dahal
+Copyright (c) 2014 Puru Dahal, Arik Gadye and Sebastian Belmar
 
 MIT License
 

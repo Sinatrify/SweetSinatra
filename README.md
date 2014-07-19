@@ -1,4 +1,4 @@
-# AintSheSweet
+# SweetSinatra
 
 TODO: Write a gem description
 
@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'aint_she_sweet'
+    gem 'sweetsinatra'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install aint_she_sweet
+    $ gem install sweetsinatra
 
 ## Usage
 
@@ -22,7 +22,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/aint_she_sweet/fork )
+1. Fork it ( https://github.com/[my-github-username]/SweetSinatra/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

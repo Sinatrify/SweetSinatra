@@ -30,8 +30,9 @@ module SweetSinatra
     #[name:string age:integer dob:datetime description:text]
 ############
     name     = APPNAME.capitalize
-    filename = "%s_create_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), APPNAME.underscore]
-    path     = APP_ROOT.join('db', 'migrate', filename)
+    filename = "%s_create_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), APPNAME]
+    #path     = APP_ROOT.join('db', 'migrate', filename)
+    path     = "db/migrate/#{filename}"
 
     if File.exist?(path)
       raise "ERROR: File '#{path}' already exists"

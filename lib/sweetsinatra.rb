@@ -27,10 +27,12 @@ module SweetSinatra
     INPUT.shift(2)
     table = INPUT.shift
     fields = INPUT
-    #[name:string age:integer dob:datetime description:text]
-############
-    name     = APPNAME.capitalize
-    filename = "%s_create_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), table +"s"]
+    name = table.capitalize
+
+    #model
+   `rake generate:model NAME=#{name}`
+    #migration
+    filename = "%s_create_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), table]
     #path     = APP_ROOT.join('db', 'migrate', filename)
     path     = "db/migrate/#{filename}"
 
@@ -47,16 +49,21 @@ module SweetSinatra
     puts "Creating #{path}"
     File.open(path, 'w+') do |f|
       f.write(<<-EOF)
-class Create#{name} < ActiveRecord::Migration
-  def change
-    create_table :#{table}s do |t|
-      #{fields_str}
+      class Create#{name} < ActiveRecord::Migration
+        def change
+          create_table :#{table}s do |t|
+          #{fields_str}
 
-      t.timestamps
+          t.timestamps
+        end
+      end
     end
+    EOF
   end
-end
-      EOF
-    end
+  #calling controller creation
+  `rake generate:controller NAME=#{name}`
+
+  #views
+  `rake generate:views NAME=#{name}`
   end
 end

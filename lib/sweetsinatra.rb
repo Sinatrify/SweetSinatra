@@ -4,8 +4,8 @@ module SweetSinatra
 
 
   INPUT = ARGV
-  APPNAME = INPUT[-1]
   COMMAND = INPUT[-2]
+  APPNAME = INPUT[-1]
 
   def self.run
     if COMMAND == "new"
@@ -30,7 +30,7 @@ module SweetSinatra
     #[name:string age:integer dob:datetime description:text]
 ############
     name     = APPNAME.capitalize
-    filename = "%s_create_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), APPNAME]
+    filename = "%s_create_%s.rb" % [Time.now.strftime('%Y%m%d%H%M%S'), table +"s"]
     #path     = APP_ROOT.join('db', 'migrate', filename)
     path     = "db/migrate/#{filename}"
 
@@ -41,21 +41,21 @@ module SweetSinatra
     table_fields = Hash[fields.map{|a| a.split(":").to_a}]
     fields_str = ""
     table_fields.each do |column, data_type|
-      fields_str << "t.#{data_type} :#{column} "
+      fields_str << "t.#{data_type} :#{column} \n"
     end
 
     puts "Creating #{path}"
     File.open(path, 'w+') do |f|
-      f.write(<<-EOF.strip_heredoc)
-      class Create#{name} < ActiveRecord::Migration
-        def change
-          create_table :#{name.downcase}s do |t|
-            "#{fields_str}"
+      f.write(<<-EOF)
+class Create#{name} < ActiveRecord::Migration
+  def change
+    create_table :#{table}s do |t|
+      #{fields_str}
 
-            t.timestamps
-          end
-        end
-      end
+      t.timestamps
+    end
+  end
+end
       EOF
     end
   end

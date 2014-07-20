@@ -5,16 +5,14 @@ module SweetSinatra
   APPNAME = ARGV.pop
   COMMAND = ARGV.pop
   def self.run
-    if COMMAND == "sinatra"
+    if COMMAND == "new"
       setup
     end
   end
 
   def self.setup
     `git clone https://github.com/Sinatrify/Sinatra_Skeleton.git`
-    `rm -rf .git`
     `mv Sinatra_Skeleton #{APPNAME}`
-    `cd #{APPNAME}`
-    `git init`
+    `rm -rf #{APPNAME}/.git`
   end
 end

@@ -13,7 +13,7 @@ module SweetSinatra
     elsif INPUT.include?("scaffold")
       scaffold
     else
-      puts "You looser MoFO!"
+      puts "Command not found"
     end
   end
 

@@ -23,13 +23,13 @@ Or install it yourself as:
 
 Create a new sinatra app project 
 
-    $ sweetsinatra new THE_NAME_OF_YOUR_APP
+    $ sweetsinatra new APP_NAME
 
-Create a scaffolds
+Create a scaffold
 
-    $ sweetsinatra scaffod THE_NAME_OF_TABLE NAME_OF_THE_FIELD:DATA_TYPE *
+    $ sweetsinatra scaffold TABLE_NAME FIELD_NAME DATA_TYPE *
 
-    *create as many fields you need by repeating the "NAME_OF_THE_FIELD:DATA_TYPE" command
+    *create as many fields you need by repeating the "FIELD_NAME DATA_TYPE" command
 
 ## Contributing
 
